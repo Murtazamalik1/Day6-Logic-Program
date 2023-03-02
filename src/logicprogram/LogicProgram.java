@@ -1,23 +1,24 @@
 package logicprogram;
 
+import java.util.Scanner;
 public class LogicProgram {
-        public void checkPerfectNumber(int n){
-            int sum = 0;
-            for (int i = 1; i < n; i++){
-                if (n % i == 0){
-                    sum = sum + i;
-                }
-            }
-            if (sum == n){
-                System.out.println(n);
-            }
-        }
+    public static void main(String[] args) {
 
-        public static void main(String[] args) {
-            LogicProgram perfectNumber = new LogicProgram();
-            System.out.println("Perfect Number :");
-            for (int i = 1; i < 50; i++){
-                perfectNumber.checkPerfectNumber(i);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number to check whether it is a prime number or not");
+        int num = sc.nextInt();
+        int i = 2;
+        boolean flag = false;
+        while (i <= num / 2) {
+            if (num % i == 0) {
+                flag = true;
+                break;
             }
+            ++i;
         }
-}
+        if (!flag)
+            System.out.println(num + " is a Prime Number");
+        else
+            System.out.println(num + " is not a Prime Number");
+       }
+   }
