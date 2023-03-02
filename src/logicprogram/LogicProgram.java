@@ -1,18 +1,23 @@
 package logicprogram;
 
 public class LogicProgram {
-
-    public static void main(String[] args) {
-
-        int num1 = 0;
-        int num2 = 1;
-        System.out.println(num1 + "\n" + num2);
-        for (int i = 0; i < 10; i++){
-            int num3 = num1+num2;
-            System.out.println(num3);
-            num1 = num2;
-            num2 = num3;
+        public void checkPerfectNumber(int n){
+            int sum = 0;
+            for (int i = 1; i < n; i++){
+                if (n % i == 0){
+                    sum = sum + i;
+                }
+            }
+            if (sum == n){
+                System.out.println(n);
+            }
         }
 
-    }
+        public static void main(String[] args) {
+            LogicProgram perfectNumber = new LogicProgram();
+            System.out.println("Perfect Number :");
+            for (int i = 1; i < 50; i++){
+                perfectNumber.checkPerfectNumber(i);
+            }
+        }
 }
